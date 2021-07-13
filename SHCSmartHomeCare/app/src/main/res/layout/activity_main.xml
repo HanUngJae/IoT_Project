@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="314dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="47dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:text="Smart  Home  Care"
+        android:textColor="#006300"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/heater_btn"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:onClick="heaterClicked"
+        android:text="난방"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/led_btn"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="#006300" />
+
+    <Button
+        android:id="@+id/electric_btn"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="electricClicked"
+        android:text="멀티탭"
+        android:textSize="25dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/valve_btn"
+        app:layout_constraintTop_toBottomOf="@+id/heater_btn" />
+
+    <Button
+        android:id="@+id/valve_btn"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="valveClicked"
+        android:text="가스밸브"
+        android:textSize="25dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        app:layout_constraintEnd_toStartOf="@+id/electric_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/led_btn"
+        app:strokeColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/led_btn"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:onClick="ledClicked"
+        android:text="전등"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/heater_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="139dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/house" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/heater_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:srcCompat="@drawable/heater" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/led_btn"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/led" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/valve_btn"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/valve" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/electric_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:srcCompat="@drawable/electric" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
