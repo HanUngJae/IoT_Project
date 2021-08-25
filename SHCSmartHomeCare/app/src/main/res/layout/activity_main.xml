@@ -15,8 +15,9 @@
         android:layout_marginEnd="47dp"
         android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
         android:text="Smart  Home  Care"
+        android:textAlignment="center"
         android:textColor="#006300"
-        android:textSize="30sp"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
