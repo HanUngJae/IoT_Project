@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ElectricActivity">
+
+    <Button
+        android:id="@+id/back_btn4"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:onClick="back_btnClicked"
+        android:text="뒤로"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/save_multitab_btn"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="145dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:onClick="save_multitab_btnClicked"
+        android:text="저장"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="66dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:text="AUTO 시간 설정"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="280dp"
+        android:layout_height="172dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <RadioButton
+            android:id="@+id/on_Radiobtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+            android:text="ON"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/off_radiobtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+            android:text="OFF"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/auto_radiobtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+            android:text="AUTO"
+            android:textSize="25sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:text="멀티탭"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/electric" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:text="~"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/end_time_multi_btn"
+        app:layout_constraintStart_toEndOf="@+id/start_time_multi_btn"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/start_time_multi_btn"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:onClick="start_time_btnClicked"
+        android:text="시작 시간"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/end_time_multi_btn"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:onClick="end_time_btnClicked"
+        android:text="종료 시간"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "SHC(Smart Home Care)"
