@@ -9,9 +9,11 @@
  #define TX 2
  #define RX 3
 
- int heaterPower = 1;
  int state = 0;
- int setTemp = 28;
+ int setTemp = 0;
+ String subscribe_data;
+ String bus;
+
 
  unsigned long lastMsg = 0;
  
@@ -33,6 +35,13 @@ void loop() {
   float temp = dht.readTemperature();
   String strTemp = String(temp) + String(humi);
 
+  if(Serial.available())
+  {
+    subscribe_data = Serial.readString();
+    state = subscribe_data.substring(0,1).toInt();
+    setTemp = subscribe_data.substring(2).toInt();
+  }
+
 
   if(isnan(humi) || isnan(temp)) {
     Serial.println("Failed to read from DHT sensor!");
@@ -41,13 +50,21 @@ void loop() {
   //float hic = dht.computeHeatIndex(temp, humi, false);
 
   Serial.write((char*)strTemp.c_str());
+  Serial.println("");
 
-  if(temp < setTemp) //히터 on
-  {
-    digitalWrite(RELAY,HIGH);
+  if(state == 1){
+    if(temp < setTemp) //히터 on
+    {
+      digitalWrite(RELAY,HIGH);
+    }
+    else //히터 off
+    {
+      digitalWrite(RELAY,LOW);
+    }
   }
-  else //히터 off
-  {
-    digitalWrite(RELAY,LOW);
+  else {
+    digitalWrite(RELAY, LOW);
   }
+
+  
 }
