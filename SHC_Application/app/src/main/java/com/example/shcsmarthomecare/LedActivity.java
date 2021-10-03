@@ -34,6 +34,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import retrofit2.HttpException;
+
 
 public class LedActivity extends AppCompatActivity {
 
@@ -55,6 +57,7 @@ public class LedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_led);
         this.InitializeView();
+
 
         try{
             HttpConnector thread = new HttpConnector();

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ public class ElectricActivity extends AppCompatActivity {
     private String startTime;
     private String endTime;
     private Button back_btn;
+    private Switch multiState_switch;
+    private Switch multiTimeState_switch;
 
 
     @Override
@@ -51,19 +54,25 @@ public class ElectricActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(json);
 
             String multitabState = jsonObject.getString("multitabState");
+            String multitabTime = jsonObject.getString("multitabTime");
             String multitabStartTime = jsonObject.getString("multitabStartTime");
             String multitabEndTime = jsonObject.getString("multitabEndTime");
 
             Log.d("JasonParsing", "Select line multitabState : " + multitabState);
+            Log.d("JasonParsing", "Select line multitabTime : " + multitabTime);
             Log.d("JasonParsing", "Select line multitabStartTime : " + multitabStartTime);
             Log.d("JasonParsing", "Select line multitabEndTime : " + multitabEndTime);
 
             if(multitabState.equals("1"))
-                on.setChecked(true);
-            else if(multitabState.equals("2"))
-                auto.setChecked(true);
+                multiState_switch.setChecked(true);
             else
-                off.setChecked(true);
+                multiState_switch.setChecked(false);
+
+            if(multitabTime.equals("1"))
+                multiTimeState_switch.setChecked(true);
+            else
+                multiTimeState_switch.setChecked(false);
+
 
             startTime = multitabStartTime.substring(0,2) + "-" + multitabStartTime.substring(3,5);
             endTime = multitabEndTime.substring(0,2) + "-" + multitabEndTime.substring(3,5);
@@ -79,11 +88,10 @@ public class ElectricActivity extends AppCompatActivity {
     {
         start_time_btn = (Button)findViewById(R.id.start_time_multi_btn);
         end_time_btn = (Button)findViewById(R.id.end_time_multi_btn);
-        on = (RadioButton)findViewById(R.id.on_Radiobtn);
-        off = (RadioButton)findViewById(R.id.off_radiobtn);
-        auto = (RadioButton)findViewById(R.id.auto_radiobtn);
         save_btn = (Button)findViewById(R.id.save_multitab_btn);
         back_btn = (Button)findViewById(R.id.back_btn4);
+        multiState_switch = (Switch)findViewById(R.id.multitab_switch);
+        multiTimeState_switch = (Switch)findViewById(R.id.multitab_timer_switch);
     }
 
     public void InitializeListener()
@@ -141,12 +149,15 @@ public class ElectricActivity extends AppCompatActivity {
         try {
             jsonObject.put("multitab","Multitab_Controller");
 
-            if(on.isChecked() == true)
+            if(multiState_switch.isChecked() == true)
                 jsonObject.put("multitabState","1");
-            else if(auto.isChecked() == true)
-                jsonObject.put("multitabState","2");
             else
                 jsonObject.put("multitabState","0");
+
+            if(multiTimeState_switch.isChecked() == true)
+                jsonObject.put("multitabTime","1");
+            else
+                jsonObject.put("multitabTime","0");
 
             jsonObject.put("multitabStartTime",startTime);
             jsonObject.put("multitabEndTime",endTime);

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -21,11 +22,10 @@ public class ValveActivity extends AppCompatActivity {
     private String json;
     private TimePickerDialog.OnTimeSetListener start_callbackMethod;
     private TimePickerDialog.OnTimeSetListener end_callbackMethod;
-    private RadioButton on;
-    private RadioButton auto;
-    private RadioButton off;
     private String startTime;
     private String endTime;
+    private Switch timeState_switch;
+    private Switch valveState_switch;
 
 
     @Override
@@ -42,6 +42,8 @@ public class ValveActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+
         this.InitializeView();
         this.InitializeListener();
 
@@ -49,6 +51,7 @@ public class ValveActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(json);
 
             String valveState = jsonObject.getString("valveState");
+            String valveTime = jsonObject.getString("valveTime");
             String valveStarTime = jsonObject.getString("valveStartTime");
             String valveEndTime = jsonObject.getString("valveEndTime");
 
@@ -57,14 +60,19 @@ public class ValveActivity extends AppCompatActivity {
             Log.d("JasonParsing", "Select line valveEndTime : " + valveEndTime);
 
             if(valveState.equals("1")){
-                on.setChecked(true);
-            }
-            else if(valveState.equals("2")){
-                auto.setChecked(true);
+                valveState_switch.setChecked(true);
             }
             else{
-                off.setChecked(true);
+                valveState_switch.setChecked(false);
             }
+
+            if(valveTime.equals("1")){
+                timeState_switch.setChecked(true);
+            }
+            else{
+                timeState_switch.setChecked(false);
+            }
+
             startTime = valveStarTime.substring(0,2) + "-" + valveStarTime.substring(3,5);
             endTime = valveEndTime.substring(0,2) + "-" + valveEndTime.substring(3,5);
             start_time_btn.setText(valveStarTime.substring(0,2) + "시 " + valveStarTime.substring(3,5) + "분");
@@ -79,9 +87,8 @@ public class ValveActivity extends AppCompatActivity {
     {
         start_time_btn = (Button)findViewById(R.id.start_time_valve_btn);
         end_time_btn = (Button)findViewById(R.id.end_time_valve_btn);
-        on = (RadioButton)findViewById(R.id.on_Radiobtn);
-        auto = (RadioButton)findViewById(R.id.auto_radiobtn);
-        off = (RadioButton)findViewById(R.id.off_radiobtn);
+        timeState_switch = (Switch)findViewById(R.id.valve_timer_switch);
+        valveState_switch = (Switch)findViewById(R.id.valve_switch);
     }
 
     public void InitializeListener()
@@ -140,12 +147,15 @@ public class ValveActivity extends AppCompatActivity {
         try {
             jsonObject.put("valve","Valve_Controller");
 
-            if(on.isChecked() == true)
+            if(valveState_switch.isChecked() == true)
                 jsonObject.put("valveState","1");
-            else if(auto.isChecked() == true)
-                jsonObject.put("valveState","2");
             else
                 jsonObject.put("valveState","0");
+
+            if(timeState_switch.isChecked() == true)
+                jsonObject.put("valveTime", "1");
+            else
+                jsonObject.put("valveTime", "0");
 
             jsonObject.put("valveStartTime",startTime);
             jsonObject.put("valveEndTime",endTime);
