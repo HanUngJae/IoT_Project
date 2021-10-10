@@ -10,15 +10,13 @@
 //DHT dht(DHTPIN, DHTTYPE);
 DHTesp dht;
 String packet;
-int setTemp = 28;
-//float humi;
-//float temp;
 
 // Update these with values suitable for your network.
 
 const char* ssid = "hotspot3883";
 const char* password = "a1111111";
-const char* mqtt_server = "broker.mqtt-dashboard.com";
+const char* mqtt_server = "piflask.iptime.org";
+//const char* mqtt_server = "broker.mqtt-dashboard.com";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -53,23 +51,27 @@ void setup_wifi() {
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
+  String subscribe_data = "";
+//  Serial.print("Message arrived [");
+//  Serial.print(topic);
+//  Serial.print("] ");
   for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
+//    Serial.print((char)payload[i]);
+    subscribe_data += (char)payload[i];
+//    Serial.println(subscribe_data);
   }
-  Serial.println();
-
+//  Serial.print(subscribe_data);
   // Switch on the LED if an 1 was received as first character
-  if ((char)payload[0] == '1') {
-    digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
-    // but actually the LED is on; this is because
-    // it is active low on the ESP-01)
-  } else {
-    digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
-  }
 
+  Serial.write((char*)subscribe_data.c_str());
+  
+//  if ((char)payload[0] == '1') {
+//    digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
+//    // but actually the LED is on; this is because
+//    // it is active low on the ESP-01)
+//  } else {
+//    digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
+//  }
 }
 
 void reconnect() {
@@ -83,9 +85,9 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("outSHCHeater", "hello world");
+      client.publish("/shc/heater", "hello world");
       // ... and resubscribe
-      client.subscribe("inSHCHeater");
+      client.subscribe("heater");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -119,7 +121,7 @@ void loop() {
   float temp = 0;
   float humi = 0;
 
-  if (now - lastMsg > 2000) {
+  if (now - lastMsg > 5000) {
     lastMsg = now;
     ++value;
     if(Serial.available())
@@ -129,16 +131,13 @@ void loop() {
       temp = strTemp.substring(0,5).toFloat();
       humi = strTemp.substring(5,10).toFloat();
       
-      Serial.print("Publish Temp: ");
-      Serial.println(strTemp.substring(0,5));
-      Serial.print("Publish Humi: ");
-      Serial.println(strTemp.substring(5,10));
+//      Serial.print("Publish Temp: ");
+//      Serial.println(strTemp.substring(0,5));
+//      Serial.print("Publish Humi: ");
+//      Serial.println(strTemp.substring(5,10));
       
-      
-      snprintf (msg, MSG_BUFFER_SIZE, "temp : %.2f, humi : %.2f", temp, humi);
-      client.publish("outSHCHeater", msg);
+      snprintf (msg, MSG_BUFFER_SIZE, "{\"temp\" : %.2f, \"humi\" : %.2f}", temp, humi);
+      client.publish("/shc/heater", msg);
     }
-    
   }
-
 }

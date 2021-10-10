@@ -37,8 +37,6 @@ void loop() {
   {
     strTemp = Serial.readString();
   }
-
-  Serial.println((char*)strTemp.c_str());
   
   lcd.setCursor(0,0);
   lcd.print("Temp = ");

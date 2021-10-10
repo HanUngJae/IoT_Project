@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ValveActivity">
 
+    <Switch
+        android:id="@+id/valve_switch"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:text="전원"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Switch
+        android:id="@+id/valve_timer_switch"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
+        android:text="타이머"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valve_switch" />
+
     <Button
         android:id="@+id/back_btn3"
         android:layout_width="80dp"
@@ -97,15 +121,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="66dp"
         android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
-        android:text="AUTO 시간 설정"
+        android:text="타이머 시간 설정"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/valve_timer_switch" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -116,39 +140,5 @@
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/valve" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="280dp"
-        android:layout_height="172dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-        <RadioButton
-            android:id="@+id/on_Radiobtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
-            android:text="ON"
-            android:textSize="25sp" />
-
-        <RadioButton
-            android:id="@+id/off_radiobtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
-            android:text="OFF"
-            android:textSize="25sp" />
-
-        <RadioButton
-            android:id="@+id/auto_radiobtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dx_hanlgrum_kscpc_euc_h"
-            android:text="AUTO"
-            android:textSize="25sp" />
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
