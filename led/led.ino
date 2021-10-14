@@ -25,7 +25,7 @@
 
 const char* ssid = "olleh_WiFi_65EB";//wifi id
 const char* password = "0000001774";//wifi pw
-const char* mqtt_server = "broker.mqtt-dashboard.com";
+const char* mqtt_server = "piflask.iptime.org";
 const char* device_id = "mqtt_led";
 
 WiFiClient espClient;
@@ -41,7 +41,6 @@ int led2 = D3;
 int led3 = D4;
 int led4 = D5;
 
-int all_state = 0; // 0 = normal, 1 = all on , 2 = all off
 int led1_state = 0; //0 = off , 1 = on
 int led2_state = 0;
 int led3_state = 0;
@@ -87,54 +86,54 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.println();
 
   String topic_a = topic;
-
+  
+  /*
+  String buff[4];
+  int i = 0;
+  char *temp = strtok(topic,"?");
+  while(temp != NULL){
+    Serial.print(topic);
+    buff[i] = temp;
+    i++;
+    temp = strtok(NULL,"?");
+  }
+  i = 0;*/
+  
   // Switch on the LED if an 1 was received as first character
-  if(topic_a == "ROOM1"){
-    if ((char)payload[0] == '0') {
+  if(topic_a == "led"){
+    if ((char)payload[0] == '0') {    //led1
       digitalWrite(led1, LOW);
+      led1_state = 0;
     }
-    else{
+    else if ((char)payload[0] == '1'){
       digitalWrite(led1, HIGH);
-    }
-  }
-  else if(topic_a == "ROOM2"){
-    if ((char)payload[0] == '0'){
-      digitalWrite(led2,LOW); 
-    }
-    else{
-      digitalWrite(led2, HIGH);
-    }
-  }
-  else if(topic_a == "ROOM3"){
-    if ((char)payload[0] == '0'){
-      digitalWrite(led3, LOW); 
-    }
-    else{
-      digitalWrite(led3, HIGH);
-    }
-  }
-  else if(topic_a == "ROOM4"){
-    if ((char)payload[0] == '0'){
-      digitalWrite(led4, LOW); 
-    }
-    else{
-      digitalWrite(led4, HIGH);
-    }
-  }
-  else if(topic_a == "ALL_ROOM"){
-    if((char)payload[0] == '0'){
-      digitalWrite(led1,LOW);
+      led1_state = 1;
+    }    
+    if ((char)payload[2] == '0'){   //led2
       digitalWrite(led2,LOW);
-      digitalWrite(led3,LOW);
-      digitalWrite(led4,LOW);
-    }else{
-      digitalWrite(led1,HIGH);
-      digitalWrite(led2,HIGH);
-      digitalWrite(led3,HIGH);
-      digitalWrite(led4,HIGH);
+      led2_state = 0; 
     }
+    else if ((char)payload[2] == '1'){
+      digitalWrite(led2, HIGH);
+      led2_state = 1;
+    }    
+    if ((char)payload[4] == '0'){   //led3
+      digitalWrite(led3, LOW); 
+      led3_state = 0;
+    }
+    else if ((char)payload[4] == '1'){
+      digitalWrite(led3, HIGH);
+      led3_state = 1;
+    }    
+    if ((char)payload[6] == '0'){   //led4
+      digitalWrite(led4, LOW);
+      led4_state = 0; 
+    }
+    else if ((char)payload[6] == '1'){
+      digitalWrite(led4, HIGH);
+      led4_state = 1;
+    }  
   }
-
 }
 
 void reconnect() {
@@ -148,13 +147,9 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("outTopic", "hello world");
+      //client.publish("/shc/led" ,"{\"led\" : \"connect\"}");
       // ... and resubscribe
-      client.subscribe("ROOM1");
-      client.subscribe("ROOM2");
-      client.subscribe("ROOM3");
-      client.subscribe("ROOM4");
-      client.subscribe("ALL_ROOM");
+      client.subscribe("led");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -165,7 +160,7 @@ void reconnect() {
   }
 }
 
-/*void switch_led(){
+void switch_led(){
   if(digitalRead(sw1)==LOW){// 버튼 제어
     if(led1_state == 0){
       digitalWrite(led1,HIGH);
@@ -210,7 +205,7 @@ if(digitalRead(sw2)==LOW){
     }
 }
 delay(1000);
-}*/
+}
 
 void setup() {
   pinMode(led1, OUTPUT);
@@ -238,15 +233,15 @@ void loop() {
     reconnect();
   }
   client.loop();
+  switch_led();
 
   unsigned long now = millis();
-  if (now - lastMsg > 2000) {
+  if (now - lastMsg > 7000) {
     lastMsg = now;
-    ++value;
-    snprintf (msg, MSG_BUFFER_SIZE, "hello world #%ld", value);
+    snprintf (msg, MSG_BUFFER_SIZE, "{\"led1\" : %ld, \"led2\" : %ld, \"led3\" : %ld, \"led4\" : %ld}",led1_state,led2_state,led3_state,led4_state);
     Serial.print("Publish message: ");
     Serial.println(msg);
-    client.publish("outTopic", msg);
+    client.publish("/shc/led", msg);
   }
-  //switch_led();
+  
 }

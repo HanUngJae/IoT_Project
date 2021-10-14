@@ -21,13 +21,12 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <Servo.h>
-
 // Update these with values suitable for your network.
 
 const char* ssid = "olleh_WiFi_65EB";//wifi id
 const char* password = "0000001774";//wifi pw
-const char* mqtt_server = "broker.mqtt-dashboard.com";
-const char* device_id = "mqtt_led";
+const char* mqtt_server = "piflask.iptime.org";
+const char* device_id = "mqtt_gas";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -43,9 +42,15 @@ int angle = 0;
 int Servo_Pin = D2;
 int Servo_B = D3;
 int Servo_Led = D4;
-int Up_B = D5;
-int Down_B = D6;
+int Timer_B = D5;
 
+int gas_state = 0; // 밸브 상태
+int timer_state = 0; // 타이머 상태
+int timer_count = 0; // 설정시간(서버에서 받은 값)
+int timer_left = 0; // 남은시간
+
+int timer_set = 0; // 시작시간
+int timer_now = 0; // 지금시간 (지금시간-시작시간>설정시간 == 종료)
 
 void setup_wifi() {
 
@@ -80,19 +85,62 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
   Serial.println();
 
+  //String ss = (char)payload[5]+(char)payload[6]+(char)payload[7];
+
   String topic_a = topic;
 
   // Switch on the LED if an 1 was received as first character
-  if(topic_a == "GAS_VALVE"){
-    if ((char)payload[0] == '0') {
+  if(topic_a == "valve"){
+    if ((char)payload[0] == '1') {
       servo.write(90);
+      digitalWrite(Servo_Led,HIGH);
+      gas_state = 1;
     }
-    else{
+    else if ((char)payload[0] == '0'){
       servo.write(0);
+      digitalWrite(Servo_Led,LOW);
+      gas_state = 0;
+    }
+    if ((char)payload[2] == '1') {
+      timer_state = 1;
+      
+      if(length<7){ //length참조하여 수정할 것 마지막 ? 넣는대서 +1 
+        timer_count = (char)payload[4]-'0';
+      }
+      else if(length<8){
+        timer_count = ((char)payload[4]-'0')*10+((char)payload[5]-'0');
+      }
+      else if(length<9){
+        timer_count = ((char)payload[4]-'0')*100+((char)payload[5]-'0')*10+((char)payload[6]-'0');
+      }
+    }
+   
+    else if ((char)payload[2] == '0'){
+      
+      timer_state = 0;
+      timer_count = 0;
+      timer_left = 0;
     }
   }
+}
 
 
+void timer_end(){
+    timer_now = millis();
+    int i = 30*60000;
+    int j = timer_now-timer_set;
+    timer_left = ((i-j)/60000)+1;
+    timer_count = timer_left;
+    if(j>i){
+      servo.write(0);
+      digitalWrite(Servo_Led,LOW);
+      gas_state = 0;
+      timer_state = 0;
+      timer_count = 0;
+      timer_set = 0;
+      timer_now = 0;
+      timer_left = 0;
+    }
 }
 
 void reconnect() {
@@ -106,9 +154,9 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("outTopic", "hello world");
+      //client.publish("/shc/valve", "{\"valve\" : \"connect\"}");
       // ... and resubscribe
-      client.subscribe("GAS_VALVE");
+      client.subscribe("valve");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -119,19 +167,55 @@ void reconnect() {
   }
 }
 
+void valve_switch(){
+  if(digitalRead(Servo_B)==LOW){// 버튼 제어
+    if(gas_state == 0){
+      digitalWrite(Servo_Led,HIGH);
+      servo.write(90);
+      gas_state = 1;
+    }
+    else if(gas_state == 1){
+      digitalWrite(Servo_Led,LOW);
+      servo.write(0);
+      gas_state = 0;
+      
+      timer_state = 0;
+      timer_count = 0;
+      timer_left = 0;
+    }
+ }
+ if(digitalRead(Timer_B)==LOW){// 버튼 제어
+    if(timer_state == 0){
+      timer_state = 2;  // 물리 제어시 2의 값
+      timer_count = 30;
+      timer_set = millis();
+    }
+    else if(timer_state == 1){
+      timer_state = 0;
+      timer_count = 0;
+      timer_left = 0;
+      
+    }
+    else if(timer_state == 2){
+      timer_state = 0;
+      timer_count = 0;
+      timer_left = 0;
+    }
+ }
+ delay(1000);
+}
 
 void setup() {
-
   servo.attach(Servo_Pin);
   pinMode(Servo_Led,OUTPUT);
   pinMode(Servo_B, INPUT_PULLUP);
-  pinMode(Up_B, INPUT_PULLUP);
-  pinMode(Down_B, INPUT_PULLUP);
-  
+  pinMode(Timer_B, INPUT_PULLUP);
+
   Serial.begin(115200);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
+
 }
 
 void loop() {
@@ -140,15 +224,18 @@ void loop() {
     reconnect();
   }
   client.loop();
+  valve_switch();
 
+  
+  if(timer_state == 2){
+    timer_end();
+  }
   unsigned long now = millis();
-  if (now - lastMsg > 2000) {
+  if (now - lastMsg > 10000) {
     lastMsg = now;
-    ++value;
-    snprintf (msg, MSG_BUFFER_SIZE, "hello world #%ld", value);
+    snprintf (msg, MSG_BUFFER_SIZE, "{\"valveState\" : %ld, \"valveTime\" : %ld}", gas_state,timer_state);
     Serial.print("Publish message: ");
     Serial.println(msg);
-    client.publish("outTopic", msg);
+    client.publish("/shc/valve", msg);
   }
-
 }
