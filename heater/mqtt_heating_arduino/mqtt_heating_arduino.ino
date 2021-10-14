@@ -85,7 +85,7 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("/shc/heater", "hello world");
+//      client.publish("/shc/heater", "hello world");
       // ... and resubscribe
       client.subscribe("heater");
     } else {

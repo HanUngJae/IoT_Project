@@ -45,9 +45,10 @@ void loop() {
   lcd.print(char(223));
   lcd.print("C ");
   lcd.setCursor(0,1);
-  lcd.print("Humi = ");
-  lcd.print(strTemp.substring(5,10));
-  lcd.print(" % ");
+  lcd.print("Set = ");
+  lcd.print(strTemp.substring(10,12));
+  lcd.print(char(223));
+  lcd.print("C ");
   
   Serial.write((char*)strTemp.c_str());
 }

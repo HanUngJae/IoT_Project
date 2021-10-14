@@ -10,7 +10,7 @@
  #define RX 3
 
  int state = 0;
- int setTemp = 0;
+ int setTemp = 10;
  String subscribe_data;
  String bus;
 
@@ -33,15 +33,15 @@ void loop() {
 
   float humi = dht.readHumidity();
   float temp = dht.readTemperature();
-  String strTemp = String(temp) + String(humi);
 
   if(Serial.available())
   {
     subscribe_data = Serial.readString();
     state = subscribe_data.substring(0,1).toInt();
-    setTemp = subscribe_data.substring(2).toInt();
+    setTemp = subscribe_data.substring(2,4).toInt();
   }
 
+  String strTemp = String(temp) + String(humi) + String(setTemp);
 
   if(isnan(humi) || isnan(temp)) {
     Serial.println("Failed to read from DHT sensor!");

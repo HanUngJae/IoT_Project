@@ -1,55 +1,382 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d303692-b79f-4071-890a-c6d682dc5714" name="Default Changelist" comment="" />
+    <list default="true" id="33cde0fb-7c6c-4e54-a7f3-a19ebcf902cb" name="Default Changelist" comment="SHC (Smart Home Care Application)">
+      <change afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/ElectricActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/ElectricActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HeaterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HeaterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HttpConnSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HttpConnSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/JsonParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/LedActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/LedActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/ValveActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/ValveActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_electric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_electric.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_heater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_heater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_led.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_led.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_valve.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_valve.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="1vGXNwZ5XYo4DV7PSeCPS3sxrEt" />
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\gudwn\SHCApplicationKeyStore.jks" />
+    <option name="KEY_ALIAS" value="SHCApplication" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ukgirkx8srj9PTlLqma1IGwZBL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="SHC(Smart_Home_Care).app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_30_x86" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-08-19T07:47:06.200Z" />
+    <property name="ExportApk.ApkPath" value="C:\Users\gudwn\AndroidStudioProjects\SHCSmartHomeCare\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.shcsmarthomecare" />
+    </key>
+    <key name="android.template.-203735621">
+      <recent name="com.example.shcsmarthomecare" />
+    </key>
+    <key name="android.template.1157755832">
+      <recent name="com.example.shcsmarthomecare" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gudwn\AndroidStudioProjects\SHCSmartHomeCare\app\src\main\res\font" />
+      <recent name="C:\Users\gudwn\AndroidStudioProjects\SHCSmartHomeCare\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gudwn\AndroidStudioProjects\SHCSmartHomeCare\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.shcsmarthomecare" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="SHC(Smart_Home_Care).app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5d303692-b79f-4071-890a-c6d682dc5714" name="Default Changelist" comment="" />
-      <created>1626189362926</created>
+      <changelist id="33cde0fb-7c6c-4e54-a7f3-a19ebcf902cb" name="Default Changelist" comment="" />
+      <created>1625215130302</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1626189362926</updated>
+      <updated>1625215130302</updated>
     </task>
+    <task id="LOCAL-00001" summary="SHC (Smart Home Care Application)">
+      <created>1626181444054</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626181444054</updated>
+    </task>
+    <task id="LOCAL-00002" summary="SHC (Smart Home Care Application)">
+      <created>1626181458731</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626181458731</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="SHC (Smart Home Care Application)" />
+    <option name="LAST_COMMIT_MESSAGE" value="SHC (Smart Home Care Application)" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1626189479860">
+    <state x="476" y="263" key="#PSD" timestamp="1626180913508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.24.1680.1010@0.0.1920.1040" timestamp="1626189479860" />
-    <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1626189480898">
+    <state x="476" y="263" key="#PSD/0.0.1920.1040@0.0.1920.1040" timestamp="1626180913508" />
+    <state x="301" y="309" key="#Web_Browsers" timestamp="1630218763669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040/1920.24.1680.1010@0.0.1920.1040" timestamp="1626189480898" />
+    <state x="301" y="309" key="#Web_Browsers/0.0.1920.1040@0.0.1920.1040" timestamp="1630218763669" />
+    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1629203706708">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629203706708" />
+    <state x="211" y="196" width="1205" height="718" key="AVDManager" timestamp="1625215703321">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="211" y="196" width="1205" height="718" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1625215703321" />
+    <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog" timestamp="1625235607926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625235607926" />
+    <state x="154" y="375" width="840" height="480" key="AndroidCreateResourceFileDialog" timestamp="1627636351332">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="154" y="375" width="840" height="480" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627636351332" />
+    <state x="243" y="342" key="AndroidCreateXmlResourceDialog" timestamp="1629206252404">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="243" y="342" key="AndroidCreateXmlResourceDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629206252404" />
+    <state x="753" y="265" key="AndroidProcessChooserDialog" timestamp="1626687735367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="265" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626687735367" />
+    <state x="93" y="100" width="854" height="847" key="DiffContextDialog" timestamp="1627889557146">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="93" y="100" width="854" height="847" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1627889557146" />
+    <state x="1246" y="285" key="FileChooserDialogImpl" timestamp="1630218829776">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1246" y="285" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1630218829776" />
+    <state x="1261" y="442" key="Github.CreateGistDialog" timestamp="1626182256256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1261" y="442" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626182256256" />
+    <state x="693" y="351" key="Github.ShareDialog" timestamp="1630219245532">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="693" y="351" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1630219245532" />
+    <state x="294" y="218" key="Github.UntrackedFilesDialog" timestamp="1629371488727">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="294" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629371488727" />
+    <state width="1876" height="219" key="GridCell.Tab.0.bottom" timestamp="1633188948627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633188948627" />
+    <state width="1876" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1630210995512" />
+    <state width="1876" height="219" key="GridCell.Tab.0.center" timestamp="1633188948627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="219" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633188948627" />
+    <state width="1876" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1630210995512" />
+    <state width="1876" height="219" key="GridCell.Tab.0.left" timestamp="1633188948627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="219" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633188948627" />
+    <state width="1876" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1630210995512" />
+    <state width="1876" height="219" key="GridCell.Tab.0.right" timestamp="1633188948627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="219" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633188948627" />
+    <state width="1876" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1630210995512" />
+    <state width="254" height="198" key="RunAnythingAction_Filter_Popup" timestamp="1626689437823">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="254" height="198" key="RunAnythingAction_Filter_Popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626689437823" />
+    <state x="36" y="186" width="998" height="717" key="SettingsEditor" timestamp="1629371146473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="36" y="186" width="998" height="717" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1629371146473" />
+    <state x="681" y="260" width="540" height="524" key="StructurePopup" timestamp="1633176015209">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="260" width="540" height="524" key="StructurePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633176015209" />
+    <state x="382" y="306" key="Vcs.Push.Dialog.v2" timestamp="1630218782017">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="382" y="306" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1630218782017" />
+    <state x="754" y="297" key="chooseDestDirectoryDialog" timestamp="1629182620669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629182620669" />
+    <state x="765" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1629381228763">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629381228763" />
+    <state x="311" y="342" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1629033871220">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="311" y="342" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629033871220" />
+    <state x="812" y="0" width="1115" height="1047" key="dock-window-1" timestamp="1629360355633">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="812" y="0" width="1115" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1629360355633" />
+    <state x="1079" y="0" width="848" height="1047" key="dock-window-2" timestamp="1629192148384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1079" y="0" width="848" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1629192148384" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3" timestamp="1629196141402">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1629196141402" />
+    <state x="622" y="331" key="git4idea.merge.GitPullDialog" timestamp="1630218740143">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="622" y="331" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1630218740143" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1633525180900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633525180900" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626689437824" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1629369807181">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629369807181" />
   </component>
 </project>
