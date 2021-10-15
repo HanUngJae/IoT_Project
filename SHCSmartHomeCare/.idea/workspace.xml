@@ -33,6 +33,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/ElectricActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/ElectricActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HeaterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HeaterActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HttpConnSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HttpConnSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HttpConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/HttpConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/JsonParser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/LedActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/LedActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/shcsmarthomecare/MainActivity.java" afterDir="false" />

@@ -17,7 +17,7 @@ public class HttpConnector extends Thread{
     @Override
     public void run() {
         try {
-            URL url = new URL("http://piflask.iptime.org:5000/json_test");
+            URL url = new URL("http://piflask.iptime.org:5000/response_json");
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 
             if(conn != null){
