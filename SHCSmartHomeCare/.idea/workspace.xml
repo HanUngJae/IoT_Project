@@ -266,14 +266,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="285" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629203706708" />
-    <state x="211" y="196" width="1205" height="718" key="AVDManager" timestamp="1625215703321">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="211" y="196" width="1205" height="718" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1625215703321" />
-    <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog" timestamp="1625235607926">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625235607926" />
     <state x="154" y="375" width="840" height="480" key="AndroidCreateResourceFileDialog" timestamp="1627636351332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -375,9 +367,10 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1633525180900" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626689437824" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1629369807181">
+    <state x="1093" y="254" width="672" height="678" key="search.everywhere.popup" timestamp="1634316185044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="1093" y="254" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1634316185044" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629369807181" />
   </component>
 </project>

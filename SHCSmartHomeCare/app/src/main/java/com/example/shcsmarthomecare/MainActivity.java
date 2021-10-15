@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         resCode = 0;
 
         try {
-            url = new URL("http://piflask.iptime.org:5000/json_test");
+            url = new URL("http://piflask.iptime.org:5000/response_json");
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
             conn.setRequestMethod("GET");
             conn.setConnectTimeout(2*1000);
